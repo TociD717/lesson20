@@ -1,37 +1,12 @@
-console.log('#3. JavaScript homework example file');
-
-/*
- * #1
- *
- * Створіть об'єкт userObj, що описує людину.
- *
- * Наступні поля обов'язкові:
- * firstName - будь-яке ім'я, рядок
- * lastName - будь-яке прізвище, рядок
- * age - будь-який вік, число
- */
-
-// console.log(userObj)
-
 var userObj = {
-    firstName : 'Andrii',
-    lastName : 'Boblov',
+    firstName: 'Andrii',
+    lastName: 'Boblov',
     age: 25,
 };
 console.log(userObj);
 
-/*
- * #2
- *
- * Для об'єкта з п.1 створіть метод fullName(), що повертає коректне повне ім'я, яке є конкатенацією firstName та lastName через пробіл.
 
- * Наприклад:
- * userObj.firstName ← 'John'
- * userObj.lastName  ← 'Smith'
- * userObj.fullName() → 'John Smith'.
- */
 
-// console.log(userObj.fullName()) // John Smith
 
 userObj.fullName = function(firstName, lastName) {
     return (userObj.firstName) + ' ' + (userObj.lastName);
@@ -39,50 +14,13 @@ userObj.fullName = function(firstName, lastName) {
 
 console.log(userObj.fullName());
 
-/*
- * #3
- *
- * Функція defUpperStr('My text') повертає текст, перетворений у верхній регістр, тобто: defUpperStr('My text') → 'MY TEXT'.
- *
- * Якщо функція викликається без параметра defUpperStr(), вона не повинна повертати undefined, у цьому випадку потрібно повернути рядок тексту за замовчуванням у верхньому регістрі, тобто defUpperStr() → 'DEFAULT TEXT'.
- *
- * При виконанні завдання не використовуйте оператор if, потрібен розв'язок із логічним оператором ||.
- */
-
-// console.log(defUpperStr('My text')) // MY TEXT
-// console.log(defUpperStr())          // DEFAULT TEXT
-
 function defUpperStr(myText) {
-    if (myText != undefined){
-    return myText.toUpperCase();
-    }  else {
-    return 'DEFAULT TEXT';
-    }
+    return (myText || 'DEFAULT TEXT').toUpperCase();
 };
 
 console.log(defUpperStr('My text'));
 console.log(defUpperStr());
 
-/*
- * #4
- *
- * Створіть функцію evenFn(n), яка приймає параметром число - кількість ітерацій циклу, тобто for 0..n.
- * Функція повинна повернути масив, що складається тільки з парних значень, які генеруються в циклі.
- *
- * Причому:
- * 0 не повинен потрапляти до результуючого масиву,
- * цикл має працювати до n включно,
- * дозволено тільки оператор for.
- *
- * Наприклад:
- * evenFn(10) → [2, 4, 6, 8, 10]
- * evenFn(15) → [2, 4, 6, 8, 10, 12, 14]
- * evenFn(20) → [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
- */
-
-// console.log(evenFn(10)) // [2, 4, 6, 8, 10]
-// console.log(evenFn(15)) // [2, 4, 6, 8, 10, 12, 14]
-// console.log(evenFn(20)) // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
 
 function evenFn(n) {
@@ -98,30 +36,6 @@ function evenFn(n) {
 };
 
 console.log(evenFn(14));
-
-/*
- * #5
- *
- * Створіть функцію weekFn(n), яка приймає номер дня тижня, а повертає його назву.
- * Якщо вводиться рядок, будь-яке дробове число або число поза діапазоном 1...7 - функція повинна повернути null.
- *
- * Наприклад:
- * 1   → 'Понеділок'
- * 2   → 'Вівторок'
- * ...
- * 7   → 'Неділя'
- * 9   → null
- * 1.5 → null
- * '2' → null
- * У реалізації функції обов'язково мають бути використані оператори switch / case / default.
- */
-
-// console.log(weekFn(1))   // 'Понеділок'
-// console.log(weekFn(3))   // 'Середа'
-// console.log(weekFn(7))   // 'Неділя'
-// console.log(weekFn(9))   // null
-// console.log(weekFn(1.5)) // null
-// console.log(weekFn('2')) // null
 
 function weekFn(n) {
     switch (n) {
@@ -310,3 +224,6 @@ function mainFunc(a, b, callback) {
 };
 
 console.log(mainFunc(10, 35, cbRandom));
+
+export { userObj, defUpperStr, evenFn, weekFn, ageClassification, oddFn, mainFunc, cbRandom, cbPow, cbAdd }
+// export {userObj, defUpperStr, evenFn}

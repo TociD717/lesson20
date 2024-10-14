@@ -1,6 +1,4 @@
-import { code } from './prepareTestEnvironment.js'
-
-eval(code)
+import { userObj } from '../main'
 
 describe('userObj properties tests', () => {
   // Перевірка наявності обов'язкових полів
